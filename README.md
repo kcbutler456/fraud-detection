@@ -1,41 +1,47 @@
-# Financial Transaction Fraud Detection
+# Financial Transaction Fraud Detection - Thursday
 
 
 
-## Tools and Resources
+ 
+## Tools and Resources - Thurs
+
+- R
+
+
+## Data Collection - Fri
+
+
+## Data Cleaning and Preparation - Fri
 
 
 
-## Data Collection
-
-
-## Data Cleaning and Preparation
+## Exploratory Data Ananlysis - Fri
 
 
 
-## Exploratory Data Ananlysis
+## Feature Selection - Fri
 
 
 
-## Feature Selection
+## Decision Tree - Sat
 
 
 
-## Decision Tree
+## Random Forest - Sat
 
 
 
-## Random Forest
+## Support Vector Machine - Sat
 
 
 
-## Support Vector Machine
-
-
-
-## XGBoost
+## XGBoost - Sun
 
 
 
 
-## Results and Conclusion
+## Results and Conclusion - Sun
+
+
+
+## References - Thur
