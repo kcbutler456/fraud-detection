@@ -19,7 +19,7 @@ This is a supervised machine learning task which will utilize decision trees, ra
 
 ## Data Collection
 
-Data collection was done using the kaggler library. 
+Data collection was done using the kaggler library which downloads data direction from Kaggle. 
 
 ```html
 install.packages(c("devtools"))
@@ -34,18 +34,42 @@ response <- kgl_datasets_download_all(owner_dataset = "ntnu-testimon/paysim1")
 download.file(response[["url"]], "application.zip", mode="wb")
 unzip_result <- unzip("application.zip", overwrite = TRUE)
 fraud <- read_csv("PS_20174392719_1491204439457_log.csv")
-         
+
+head(fraud)
 ```
 ![image](https://user-images.githubusercontent.com/55027593/116000177-b720ab80-a5b4-11eb-9823-e9a41908361f.png)
 
-## Data Cleaning and Preparation - Fri
+## Data Cleaning and Exploratory Data Ananlysis
 
+This data comes fairly well prepared, so minimal data cleaning was needed. I updated data types and did basic exploratory data anlysis to start. 
 
+```html
+data <- data.frame(fraud) #Make a copy of the data
 
-## Exploratory Data Ananlysis - Fri
+data$isFlaggedFraud <- as.factor(data$isFlaggedFraud)
+data$isFraud <- as.factor(data$isFraud)
+data$step <- as.factor(data$step)
+data$type <- as.factor(data$type)
+```
 
+```html
+nrow(data)
+```
+[1] 6362620
 
+```html
+str(data)
+```
+![image](https://user-images.githubusercontent.com/55027593/116000463-f13e7d00-a5b5-11eb-8d05-9f0685140914.png)
 
+```html
+data[is.na(data), ] #Check the data for null values
+summary(data) #Evaluate the spread
+
+```
+![image](https://user-images.githubusercontent.com/55027593/116000505-28149300-a5b6-11eb-958f-8f6a7e62fefe.png)             
+ 
+ 
 ## Feature Selection - Fri
 
 
