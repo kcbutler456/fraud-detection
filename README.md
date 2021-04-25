@@ -186,17 +186,25 @@ confusionMatrix(pred, test$isFraud, positive = "1")
 
 polynomial SVM
 
-
-
+```html
+set.seed(124)
+classifier <- svm(formula = isFraud~.,
+                  data = train,
+                  type = 'C-classification', 
+                  kernel = 'polynomial')
+pred <- predict(classifier, test[-7])
+confusionMatrix(pred, test$isFraud, positive = "1")
+```
+![image](https://user-images.githubusercontent.com/55027593/116012421-f91b1300-a5ef-11eb-9356-a43b74011834.png)
 
 radial SVM
 
-## XGBoost - Sun
+## XGBoost
 
 
 
 
-## Results and Conclusion - Sun
+## Results and Conclusion
 
 
 
@@ -213,3 +221,4 @@ radial SVM
 - Simplilearn. (2018). Decision Tree In Machine Learning | Decision Tree Algorithm In Python |Machine Learning. https://www.youtube.com/watch?v=RmajweUFKvM
 - Brownlee, J. (2014). Feautre Selection with the Caret R Package. https://machinelearningmastery.com/feature-selection-with-the-caret-r-package/
 - Simplilearn. (2020). Ensemble Learning | Ensemble Learning In Machine Learning | Machine Learning Tutorial. https://www.youtube.com/watch?v=WtWxOhhZWX0
+- StatQuest. (2018). ROC and AUC in R. https://www.youtube.com/watch?v=qcvAqAH60Yw
