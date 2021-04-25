@@ -139,3 +139,4 @@ A
 - Simplilearn. (2020). Feature Selection In Machine Learning | Feature Selection Techniques With Examples. https://www.youtube.com/watch?v=5bHpPQ6_OU4
 - Simplilearn. (2018). Random Forest Algorithm - Random Forest Explained | Random Forest in Machine Learning. https://www.youtube.com/watch?v=eM4uJ6XGnSM&t=639s 
 - Simplilearn. (2018). Decision Tree In Machine Learning | Decision Tree Algorithm In Python |Machine Learning. https://www.youtube.com/watch?v=RmajweUFKvM
+- Brownlee, J. (2014). Feautre Selection with the Caret R Package. https://machinelearningmastery.com/feature-selection-with-the-caret-r-package/
