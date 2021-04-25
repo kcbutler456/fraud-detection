@@ -94,7 +94,7 @@ data%>%
 
 
 ## Feature Selection
-The vcd package in R was used to evaluate the association of each variable with the target variable, isFraud. Additionally, a recursive feature elimination method was used to evaluate subsets of attributes to select the subset that produces the highest accuracy. 
+The vcd package in R was used to evaluate the association of each variable with the target variable, isFraud. Contigency coefficient was used to determine independence from the target variable while Cramer's V was used to determine association. Additionally, a recursive feature elimination method was used to evaluate subsets of attributes to select the subset that produces the highest accuracy. 
 
 ```html
 library("vcd")
