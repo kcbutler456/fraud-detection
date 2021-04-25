@@ -34,8 +34,9 @@ response <- kgl_datasets_download_all(owner_dataset = "ntnu-testimon/paysim1")
 download.file(response[["url"]], "application.zip", mode="wb")
 unzip_result <- unzip("application.zip", overwrite = TRUE)
 fraud <- read_csv("PS_20174392719_1491204439457_log.csv")
+         
 ```
-
+![image](https://user-images.githubusercontent.com/55027593/116000177-b720ab80-a5b4-11eb-9823-e9a41908361f.png)
 
 ## Data Cleaning and Preparation - Fri
 
