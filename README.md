@@ -93,8 +93,8 @@ data%>%
 
 
 
-## Feature Selection - Fri
-
+## Feature Selection
+The vcd package in R was used to evaluate the association of each variable with the target variable, isFraud. 
 
 
 ## Decision Tree - Sat
