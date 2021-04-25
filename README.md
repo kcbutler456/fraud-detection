@@ -94,7 +94,31 @@ data%>%
 
 
 ## Feature Selection
-The vcd package in R was used to evaluate the association of each variable with the target variable, isFraud. 
+The vcd package in R was used to evaluate the association of each variable with the target variable, isFraud. Additionally, a recursive feature elimination method was used to evaluate subsets of attributes to select the subset that produces the highest accuracy. 
+
+```html
+library("vcd")
+stats_amount <- assocstats(table(data$isFraud, data$amount))
+stats_oldbalorg<- assocstats(table(data$isFraud, data$oldbalanceOrg))
+stats_newbalOrg<- assocstats(table(data$isFraud, data$newbalanceOrig))
+stats_oldbaldest<- assocstats(table(data$isFraud, data$oldbalanceDest))
+stats_newbaldest<- assocstats(table(data$isFraud, data$newbalanceDest))
+stats_step <- assocstats(table(data$isFraud, data$step))
+stats_nameOrig <- assocstats(table(data$isFraud, data$nameOrig))
+stats_nameDest <- assocstats(table(data$isFraud, data$nameDest))
+
+names <- c("amount", "oldbalorg", "newbalOrg", "oldbaldest", "newbaldest", 
+           "step", "nameOrig", "nameDest")
+contingency <- c(stats_amount$contingency, stats_oldbalorg$contingency,stats_newbalOrg$contingency,stats_oldbaldest$contingency,
+  stats_newbaldest$contingency,stats_step$contingency,stats_nameOrig$contingency,stats_nameDest$contingency)
+cramer <- c(stats_amount$cramer, stats_oldbalorg$cramer,stats_newbalOrg$cramer,stats_oldbaldest$cramer,
+  stats_newbaldest$cramer,stats_step$cramer,stats_nameOrig$cramer,stats_nameDest$cramer)
+
+feat <- data.frame(cbind(names, contingency, cramer))
+feat$contingency <- round(as.numeric(feat$contingency)*100,1)
+feat$cramer <- round(as.numeric(feat$cramer)*100,1)
+```
+![image](https://user-images.githubusercontent.com/55027593/116001722-7b3d1480-a5bb-11eb-884c-21349c57d346.png)
 
 
 ## Decision Tree - Sat
