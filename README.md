@@ -168,9 +168,28 @@ confusionMatrix(pred, test$isFraud, positive = "1")
 ![image](https://user-images.githubusercontent.com/55027593/116009259-1cd55d80-a5de-11eb-96a7-74e565f8993f.png)
 
 
-## Support Vector Machine - Sat
+## Support Vector Machine 
+
+Linear SVM
+```html
+set.seed(124)
+classifier <- svm(formula = isFraud~.,
+                  data = train,
+                  type = 'C-classification', 
+                  kernel = 'linear')
+pred <- predict(classifier, test[-7])
+confusionMatrix(pred, test$isFraud, positive = "1")
+```
+![image](https://user-images.githubusercontent.com/55027593/116011032-5ca14280-a5e8-11eb-9671-50301e7f2adf.png)
 
 
+
+polynomial SVM
+
+
+
+
+radial SVM
 
 ## XGBoost - Sun
 
