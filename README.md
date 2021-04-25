@@ -139,7 +139,7 @@ confusionMatrix(pred, test$isFraud, positive = "1")
 
 ![image](https://user-images.githubusercontent.com/55027593/116008747-b3ece600-a5db-11eb-89f8-ad804d31d378.png)
 
-## Random Forest - Sat
+## Random Forest
 
 
 10 Trees
@@ -156,6 +156,17 @@ set.seed(124)
 rf <- randomForest(isFraud~., data = train, ntree = 20)
 confusionMatrix(pred, test$isFraud, positive = "1")
 ```
+![image](https://user-images.githubusercontent.com/55027593/116009059-07abff00-a5dd-11eb-9db1-3b24e98aed03.png)
+
+30 Trees
+```html
+set.seed(124)
+rf <- randomForest(isFraud~., data = train, ntree = 30)
+confusionMatrix(pred, test$isFraud, positive = "1")
+```
+
+![image](https://user-images.githubusercontent.com/55027593/116009259-1cd55d80-a5de-11eb-96a7-74e565f8993f.png)
+
 
 ## Support Vector Machine - Sat
 
