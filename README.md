@@ -94,7 +94,7 @@ data%>%
 
 
 ## Feature Selection
-A recursive feature elimination method was used to evaluate subsets of attributes to select the subset that produces the highest accuracy. Decision trees were produced at various subsets. The model determined all 6 variables (newbalanceDest, oldbalanceOrg, newbalanceOrig, oldbalanceDest, type, and amount produces the best results. We proceed with these variables
+A recursive feature elimination method was used to evaluate subsets of attributes to select the subset that produces the highest accuracy. Decision trees were produced at various subsets. The model determined all 6 variables (newbalanceDest, oldbalanceOrg, newbalanceOrig, oldbalanceDest, type, and amount) produces the best results. We proceed with these variables
 
 ```html
 control <- rfeControl(functions = rfFuncs, method = "cv", number = 10)
@@ -109,9 +109,35 @@ plot(results, type=c("g", "o"))
 ![image](https://user-images.githubusercontent.com/55027593/116005512-e4795380-a5cc-11eb-885d-916093786904.png)
 
 
+## Data Preparation for Models
+We now split the data into train and testing datasets for the machine learning phase. We use a 75/25 split. 
+
+```html
+set.seed(124)
+dt <- data #make a copy of clean data
+dt <- dt[,c(2,3,5,6,8,9,10)] #select 6 variables identified in feature selection
+
+split = sample.split(dt$isFraud, SplitRatio = 0.75)
+train <- subset(dt, split == TRUE)
+test <- subset(dt, split == FALSE)
+```
+
 ## Decision Tree
 
+```html
+tree.fraud <- tree(isFraud~., data=train)
+plot(tree.fraud)
+text(tree.fraud, pretty = 0)
+```
+![image](https://user-images.githubusercontent.com/55027593/116008720-8d2eaf80-a5db-11eb-8c90-3c50144e6b74.png)
 
+
+```html
+pred <- predict(tree.fraud, test, type = "class")
+confusionMatrix(pred, test$isFraud, positive = "1")
+```
+
+![image](https://user-images.githubusercontent.com/55027593/116008747-b3ece600-a5db-11eb-89f8-ad804d31d378.png)
 
 ## Random Forest - Sat
 
