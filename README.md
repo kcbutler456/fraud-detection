@@ -40,8 +40,6 @@ head(fraud)
 ![image](https://user-images.githubusercontent.com/55027593/116000177-b720ab80-a5b4-11eb-9823-e9a41908361f.png)
 
 
-![image](https://user-images.githubusercontent.com/55027593/116000762-239caa00-a5b7-11eb-9b45-365c4ccc43ad.png)
-
 
 ## Data Cleaning and Exploratory Data Ananlysis
 
@@ -74,6 +72,15 @@ summary(data) #Evaluate the spread
 ![image](https://user-images.githubusercontent.com/55027593/116000505-28149300-a5b6-11eb-958f-8f6a7e62fefe.png)             
  
  
+ ```html
+plot(data[data$isFraud=='1',"type"], main="Total Fraud Records by Type" ) 
+data <- data[data$type=="CASH_OUT"|data$type=="TRANSFER",] 
+nrow(data)
+```
+[1] 2770409
+
+![image](https://user-images.githubusercontent.com/55027593/116000845-78d8bb80-a5b7-11eb-9ad8-ceb69e80d4df.png)
+
 ## Feature Selection - Fri
 
 
