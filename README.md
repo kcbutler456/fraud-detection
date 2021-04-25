@@ -142,6 +142,20 @@ confusionMatrix(pred, test$isFraud, positive = "1")
 ## Random Forest - Sat
 
 
+10 Trees
+```html
+set.seed(124)
+rf <- randomForest(isFraud~., data = train, ntree = 10)
+confusionMatrix(pred, test$isFraud, positive = "1")
+```
+![image](https://user-images.githubusercontent.com/55027593/116008920-6329bd00-a5dc-11eb-9ef8-3b0c5fb912bf.png)
+
+20 Trees
+```html
+set.seed(124)
+rf <- randomForest(isFraud~., data = train, ntree = 20)
+confusionMatrix(pred, test$isFraud, positive = "1")
+```
 
 ## Support Vector Machine - Sat
 
