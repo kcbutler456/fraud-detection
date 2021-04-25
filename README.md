@@ -39,6 +39,10 @@ head(fraud)
 ```
 ![image](https://user-images.githubusercontent.com/55027593/116000177-b720ab80-a5b4-11eb-9823-e9a41908361f.png)
 
+
+![image](https://user-images.githubusercontent.com/55027593/116000762-239caa00-a5b7-11eb-9b45-365c4ccc43ad.png)
+
+
 ## Data Cleaning and Exploratory Data Ananlysis
 
 This data comes fairly well prepared, so minimal data cleaning was needed. I updated data types and did basic exploratory data anlysis to start. From the EDA phase, we find that this data is heavily unbalanced with fraud instances making up less than .13% of the data (8,213 observations). Upon further investigation, these fraud instances can only be found in cash out and transafer transaction types. Therefore, we can exclude cash in, debit, and payment transaction types to reduce the overall observations and non-fraud transactions. 
