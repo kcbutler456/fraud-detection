@@ -8,7 +8,7 @@ This is a supervised machine learning task which will utilize decision trees, ra
 
 
 
-## Tools and Resources - Thurs
+## Tools and Resources
 
 - R
 - Synthetic Financial Datasets For Fraud Detection (Lopez-Rojas et al., 2016)
@@ -17,7 +17,14 @@ This is a supervised machine learning task which will utilize decision trees, ra
 - Implementing an XGBoost Model in R (Grogan, 2020)
 - Support Vector Machines in R (Lee, 2018)
 
-## Data Collection - Fri
+## Data Collection
+
+Data collection was done using the kaggler library. 
+
+```html
+install.packages(c("devtools"))
+devtools::install_github("ldurazo/kaggler")
+```
 
 
 ## Data Cleaning and Preparation - Fri
