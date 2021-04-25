@@ -24,6 +24,16 @@ Data collection was done using the kaggler library.
 ```html
 install.packages(c("devtools"))
 devtools::install_github("ldurazo/kaggler")
+
+library(kaggler)
+
+setwd()
+kgl_auth(creds_file = 'kaggle.json')
+response <- kgl_datasets_download_all(owner_dataset = "ntnu-testimon/paysim1")
+
+download.file(response[["url"]], "application.zip", mode="wb")
+unzip_result <- unzip("application.zip", overwrite = TRUE)
+fraud <- read_csv("PS_20174392719_1491204439457_log.csv")
 ```
 
 
