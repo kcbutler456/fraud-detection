@@ -212,3 +212,4 @@ radial SVM
 - Simplilearn. (2018). Random Forest Algorithm - Random Forest Explained | Random Forest in Machine Learning. https://www.youtube.com/watch?v=eM4uJ6XGnSM&t=639s 
 - Simplilearn. (2018). Decision Tree In Machine Learning | Decision Tree Algorithm In Python |Machine Learning. https://www.youtube.com/watch?v=RmajweUFKvM
 - Brownlee, J. (2014). Feautre Selection with the Caret R Package. https://machinelearningmastery.com/feature-selection-with-the-caret-r-package/
+- Simplilearn. (2020). Ensemble Learning | Ensemble Learning In Machine Learning | Machine Learning Tutorial. https://www.youtube.com/watch?v=WtWxOhhZWX0
