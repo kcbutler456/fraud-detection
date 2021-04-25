@@ -125,3 +125,4 @@ The vcd package in R was used to evaluate the association of each variable with 
 - Maklin, C. (2019, July 30). Random Forest In R. Medium. https://towardsdatascience.com/random-forest-in-r-f66adf80ec9. 
 - Grogan, M. (2020, October 5). Implementing an XGBoost Model in R. Medium. https://towardsdatascience.com/implementing-an-xgboost-model-in-r-59ee1892be2f. 
 - Lee, J. (2018). Support Vector Machines in R. DataCamp Community. https://www.datacamp.com/community/tutorials/support-vector-machines-r. 
+- Zablotski, Yury. (2021). R demo | Deep Exploratory Data Analysis (EDA) | explore your data and start to test hypotheses. Retreived from https://www.youtube.com/watch?v=Swcp0_l65lw.
