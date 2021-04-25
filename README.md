@@ -104,6 +104,8 @@ results
 predictors(results)
 plot(results, type=c("g", "o"))
 ```
+
+![image](https://user-images.githubusercontent.com/55027593/116008479-6459ea80-a5da-11eb-9712-2b261a2a8efe.png)
 ![image](https://user-images.githubusercontent.com/55027593/116005512-e4795380-a5cc-11eb-885d-916093786904.png)
 
 
