@@ -81,6 +81,18 @@ nrow(data)
 
 ![image](https://user-images.githubusercontent.com/55027593/116000845-78d8bb80-a5b7-11eb-9ad8-ceb69e80d4df.png)
 
+```html
+data%>%
+  group_by(type, isFraud)%>%
+  count()%>%
+  data.frame()%>%
+  ggplot( aes(fill=isFraud, y=n, x=type)) + 
+  geom_bar(position="stack", stat="identity")
+```
+![image](https://user-images.githubusercontent.com/55027593/116000901-ab82b400-a5b7-11eb-8c4b-59a8c9ddb88e.png)
+
+
+
 ## Feature Selection - Fri
 
 
