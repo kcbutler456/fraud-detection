@@ -198,6 +198,16 @@ confusionMatrix(pred, test$isFraud, positive = "1")
 ![image](https://user-images.githubusercontent.com/55027593/116012421-f91b1300-a5ef-11eb-9356-a43b74011834.png)
 
 radial SVM
+```html
+set.seed(124)
+classifier <- svm(formula = isFraud~.,
+                  data = train,
+                  type = 'C-classification', 
+                  kernel = 'radial')
+pred <- predict(classifier, test[-7])
+confusionMatrix(pred, test$isFraud, positive = "1")
+```
+![image](https://user-images.githubusercontent.com/55027593/116015355-849ba080-a5fe-11eb-9ce5-33e537452054.png)
 
 ## XGBoost
 
@@ -222,3 +232,4 @@ radial SVM
 - Brownlee, J. (2014). Feautre Selection with the Caret R Package. https://machinelearningmastery.com/feature-selection-with-the-caret-r-package/
 - Simplilearn. (2020). Ensemble Learning | Ensemble Learning In Machine Learning | Machine Learning Tutorial. https://www.youtube.com/watch?v=WtWxOhhZWX0
 - StatQuest. (2018). ROC and AUC in R. https://www.youtube.com/watch?v=qcvAqAH60Yw
+- https://www.analyticsvidhya.com/blog/2016/01/xgboost-algorithm-easy-steps/
