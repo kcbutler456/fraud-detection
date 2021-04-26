@@ -4,7 +4,7 @@ One of the most common problems facing financial institutions today is how to de
 
 This project seeks to use a binary machine learning classifier to detect fraud in financial transactions. The data used for this project is located on Kaggle. Due to the private nature of financial data, this public data source is synthetic, generated for the purpose of preforming research (Lopez-Rojas et al., 2016). This data is an aggregation of private datasets to provide transaction data the resembles normal operations and injects malicious behaviour to later evaluate the performance of fraud detection methods (Lopez-Rojas et al., 2016).
 
-This is a supervised machine learning task which will utilize decision trees, random forest, xgboost, and support vector machine and compare the results to select the best performing classifier. The data used contains over 6 million observations and 11 variables (step, amount, nameOrig, oldblanceOrg, newbalanceOrig, nameDest, oldblanceDest, newbalanceDest, isFraud, and isFlaggedFraud)
+This is a supervised machine learning task which will utilize decision trees, random forest, and support vector machine and compare the results to select the best performing classifier. The data used contains over 6 million observations and 11 variables (step, amount, nameOrig, oldblanceOrg, newbalanceOrig, nameDest, oldblanceDest, newbalanceDest, isFraud, and isFlaggedFraud)
 
 
 
@@ -209,14 +209,11 @@ confusionMatrix(pred, test$isFraud, positive = "1")
 ```
 ![image](https://user-images.githubusercontent.com/55027593/116015355-849ba080-a5fe-11eb-9ce5-33e537452054.png)
 
-## XGBoost
-
-
-
-
 ## Results and Conclusion
 
+Due to the sevearly imbalanced nature of the classes, with the rare class being fraud, we will keep an eye on the balanced accuracy results from the confusion matrix output instead of the standard accuracy metric. This balanced accuracy takes into account prevalence of the respective classes. Additionly, we will use kappa to measure the aggreement between the predicted and test data. Using the same six variables across each model and comparing them side by side, we can quickly rule out support vector machine for this data and machine learning task. It performed the worst with balanced accuracy ranging from .67 to .76. Additionally, the rate of false negatives was too high to deem acceptable for this business task. This leaves the deicision tree classifier and the random forest classifier (ensemble learning method). Due to machine memory limitations, I was limited in the number of trees I could run. Therefore, I decided to compare the results of the random forest at 10, 20, and 30 tree ensemble. Of these, the decision tree classifier with 20 trees performed the best with a balanced accuracy of .86 and a kappa value of .83. Comparing this to our decision tree confusion matrix output, we can see the random forest outperformed, with the decision tree balance accuracy of .85 and a kappa value of .81. Additionally, the false positive rate improved slightly with the random forest classifier. 
 
+With all of the confusion matrix output considered, we can conclude the random forest classifier is the best model for this method. Further tuning and hyper parameteraization can also be considered to improve this model further. Additionally, in a real business senario, we would have access to much more predictive variables. For example, we may include information about the customer or their occupation. This type of data may lend itself to higher accuracy in predicting fraud data in financial transactions. 
 
 ## References
 - Federal Trade Commission. (2020, January). Consumer Sentinel Network Data Book 2019. https://www.ftc.gov/system/files/documents/reports/consumer-sentinel-network-data-book-2019/consumer_sentinel_network_data_book_2019.pdf. 
@@ -232,4 +229,3 @@ confusionMatrix(pred, test$isFraud, positive = "1")
 - Brownlee, J. (2014). Feautre Selection with the Caret R Package. https://machinelearningmastery.com/feature-selection-with-the-caret-r-package/
 - Simplilearn. (2020). Ensemble Learning | Ensemble Learning In Machine Learning | Machine Learning Tutorial. https://www.youtube.com/watch?v=WtWxOhhZWX0
 - StatQuest. (2018). ROC and AUC in R. https://www.youtube.com/watch?v=qcvAqAH60Yw
-- https://www.analyticsvidhya.com/blog/2016/01/xgboost-algorithm-easy-steps/
